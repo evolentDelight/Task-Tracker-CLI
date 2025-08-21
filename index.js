@@ -27,3 +27,26 @@ let nextId = 1;
 */
 
 const args = process.argv.slice(2);
+
+switch (args[0]) {
+  case "add":
+    addTask();
+    break;
+  case "update":
+    updateTask();
+    break;
+  case "delete":
+    deleteTask();
+    break;
+  case "mark-in-progress":
+    markInProgress();
+    break;
+  case "mark-done":
+    markDone();
+    break;
+  case "list":
+    listFunction();
+    break;
+  default:
+    console.log(`Invalid command: ${args[0]}`);
+}
