@@ -8,4 +8,8 @@ const task = {
   updatedat: 0,
 };
 
-let nextInt = 1;
+let nextId = 1;
+
+console.log("Hello World");
+console.log(`task: ${task}`);
+console.log(`nextId: ${nextId}`);
