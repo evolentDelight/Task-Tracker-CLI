@@ -1,0 +1,25 @@
+{
+  "name": "task-tracker-cli",
+  "version": "1.0.0",
+  "description": "Commander Line Interface Task/Todo Tracker",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"None\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evolentDelight/Task-Tracker-CLI.git"
+  },
+  "keywords": [
+    "task",
+    "tracker",
+    "cli",
+    "javascript"
+  ],
+  "author": "Ben Kwon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/evolentDelight/Task-Tracker-CLI/issues"
+  },
+  "homepage": "https://github.com/evolentDelight/Task-Tracker-CLI"
+}
