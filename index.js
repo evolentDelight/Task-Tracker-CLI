@@ -3,16 +3,6 @@
 import ManageTasks from "./ManageTasks.js";
 import ListTasks from "./ListTasks.js";
 
-const task = {
-  id: 0,
-  description: "",
-  status: "",
-  createdAt: 0,
-  updatedat: 0,
-};
-
-let nextId = 1;
-
 /* Types of Arguments
   add - add a new task
 
