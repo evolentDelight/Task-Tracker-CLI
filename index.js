@@ -16,7 +16,7 @@ let nextId = 1;
 /* Types of Arguments
   add - add a new task
 
-  update <id>- update task <id>
+  update <id> <update name> - update task <id>
   delete <id> - delete task <id>
 
   mark-in-progress <id> - mark task <id> as in-progress
@@ -37,7 +37,7 @@ outerSwitch: switch (args[0]) {
   case "delete":
   case "mark-in-progress":
   case "mark-done":
-    ManageTasks(args[0]);
+    ManageTasks(args[0], args);
     break;
   case "list":
     switch (args[1]) {

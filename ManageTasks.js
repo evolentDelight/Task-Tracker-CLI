@@ -1,1 +1,1 @@
-export default function ManageTasks(arg) {}
+export default function ManageTasks(mainCommand, args) {}
