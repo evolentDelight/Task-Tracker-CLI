@@ -31,17 +31,37 @@ let nextId = 1;
 
 const args = process.argv.slice(2);
 
-switch (args[0]) {
+outerSwitch: switch (args[0]) {
   case "add":
   case "update":
   case "delete":
   case "mark-in-progress":
   case "mark-done":
-    ManageTasks();
+    ManageTasks(args[0]);
     break;
   case "list":
-    listFunction();
-    break;
-  default:
-    console.log(`Invalid command: ${args[0]}`);
+    switch (args[1]) {
+      case "done":
+      case "todo":
+      case "in-progress":
+        ListTasks(args[1]);
+        break outerSwitch;
+      default:
+        if (args[1]) {
+          //If there is a argument after "list", when there shouldn't be...
+          // console.log(`Invalid command: ${args[1]}`); ->forwarded to default
+          break;
+        } else {
+          ListTasks("all");
+          break outerSwitch;
+        }
+    }
+  default: //Better troubleshooting response
+    if (args[0] === "list") {
+      console.log(`Invalid command: ${args[1]}`);
+      console.log(`Your command: ${args[0]} ${args[1]}`);
+    } else {
+      console.log(`Invalid command: ${args[0]}`);
+      console.log(`Your command: ${args[0]}`);
+    }
 }

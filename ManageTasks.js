@@ -1,3 +1,1 @@
-export default function ManageTasks() {
-  console.log("hello from managetasks");
-}
+export default function ManageTasks(arg) {}

@@ -1,1 +1,1 @@
-export default function ListTasks() {}
+export default function ListTasks(arg) {}
