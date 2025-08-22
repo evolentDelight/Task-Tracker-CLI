@@ -48,7 +48,7 @@ outerSwitch: switch (args[0]) {
         break outerSwitch;
       default:
         if (args[1]) {
-          //If there is a argument after "list", when there shouldn't be...
+          //If there is an invalid argument after "list"
           // console.log(`Invalid command: ${args[1]}`); ->forwarded to default
           break;
         } else {
