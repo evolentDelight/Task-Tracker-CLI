@@ -2,6 +2,7 @@
   "name": "task-tracker-cli",
   "version": "1.0.0",
   "description": "Commander Line Interface Task/Todo Tracker",
+  "type": "module",
   "main": "index.js",
   "bin": {
     "task-cli": "./index.js"
