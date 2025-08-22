@@ -1,5 +1,8 @@
 #!/usr/bin/env node
 
+import ManageTasks from "./ManageTasks.js";
+import ListTasks from "./ListTasks.js";
+
 const task = {
   id: 0,
   description: "",
@@ -30,19 +33,11 @@ const args = process.argv.slice(2);
 
 switch (args[0]) {
   case "add":
-    addTask();
-    break;
   case "update":
-    updateTask();
-    break;
   case "delete":
-    deleteTask();
-    break;
   case "mark-in-progress":
-    markInProgress();
-    break;
   case "mark-done":
-    markDone();
+    ManageTasks();
     break;
   case "list":
     listFunction();
