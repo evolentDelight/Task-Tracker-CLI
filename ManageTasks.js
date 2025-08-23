@@ -10,15 +10,38 @@ class taskSchema {
   }
 }
 
-let nextId = 0;
+function getNextId() {
+  //Create new programData.json to store id as persistant data
+  if (!fs.existsSync("./programData.json")) {
+    const IDs = { id: 0 };
+    const idJSON = JSON.stringify(IDs, null, 2);
+    fs.writeFile("programData.json", idJSON, (err) => {
+      if (err) console.error(`Error writing JSON file`, err);
+    });
+    return 0;
+  }
+  const idData = fs.readFileSync("./programData.json", "utf8");
+  const IDs = JSON.parse(idData);
+
+  const nextId = ++IDs.id; //Get next id AND update JSON object
+
+  const idJSON = JSON.stringify(IDs, null, 2);
+  fs.writeFile("programData.json", idJSON, (err) => {
+    if (err) console.error(`Error writing JSON file`, err);
+  });
+
+  return nextId;
+}
 
 function addNewTask(description) {
   //Check if user-inputted description is valid
   if (!description)
     return console.error("||Error|| Missing required name/description");
 
+  const newId = getNextId();
+
   //Create new task object
-  const newTask = new taskSchema(nextId, description);
+  const newTask = new taskSchema(newId, description);
 
   //Check if tasksData.json exists
   if (!fs.existsSync("./tasksData.json")) {
