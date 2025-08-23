@@ -1,6 +1,7 @@
 import * as fs from "fs";
 
 //Handles JSON data. Returns nonJSON object
+//JSON stringify, parse,
 
 function fileExists(pathname) {}
 
