@@ -1,4 +1,4 @@
-import * as fs from "fs";
+import * as FO from "./fileOperations.js";
 
 class taskSchema {
   constructor(id, description) {
@@ -12,23 +12,21 @@ class taskSchema {
 
 function getNextId() {
   //Create new programData.json to store id as persistant data
-  if (!fs.existsSync("./programData.json")) {
+  if (!FO.fileExistsSync("./programData.json")) {
     const IDs = { id: 0 };
-    const idJSON = JSON.stringify(IDs, null, 2);
-    fs.writeFile("programData.json", idJSON, (err) => {
+
+    FO.writeFile("programData.json", IDs, (err) => {
       if (err) console.error(`Error writing JSON file`, err);
     });
     return 0;
   }
-  const idData = fs.readFileSync("./programData.json", "utf8");
-  const IDs = JSON.parse(idData);
+  const IDs = FO.readFileSync("./programData.json");
+  // if data is empty, then create new
+  if (!IDs) IDs = { id: 99999 }; //if programData is somehow deleted or empty, it will affect the existing task ids in tasksData.json, thus either using unique id or absurd numbered id will alleviate the issue
 
   const nextId = ++IDs.id; //Get next id AND update JSON object
 
-  const idJSON = JSON.stringify(IDs, null, 2);
-  fs.writeFile("programData.json", idJSON, (err) => {
-    if (err) console.error(`Error writing JSON file`, err);
-  });
+  FO.writeFile("./programData.json", IDs);
 
   return nextId;
 }
@@ -44,27 +42,22 @@ function addNewTask(description) {
   const newTask = new taskSchema(newId, description);
 
   //Check if tasksData.json exists
-  if (!fs.existsSync("./tasksData.json")) {
+  if (!FO.fileExistsSync("./tasksData.json")) {
     //If it doesn't exist, then there is no existing data, so create new file
     const arrayData = [newTask];
-    const newJSON = JSON.stringify(arrayData, null, 2);
 
-    fs.writeFile("tasksData.json", newJSON, (err) => {
-      if (err) console.error("Error writing JSON file:", err);
-    });
+    FO.writeFile("tasksData.json", arrayData);
     console.log(`Task added successfully (ID: ${newTask.id})`);
     return; //And exit, once complete
   }
   //If tasksData.json does exist, read and parse from it
-  const fileData = fs.readFileSync("./tasksData.json", "utf8");
-  const existingTasks = JSON.parse(fileData);
+  let tasks = FO.readFileSync("./tasksData.json");
+  // if data is empty, then create new
+  if (!tasks) tasks = [newTask];
+  else tasks.push(newTask);
 
-  existingTasks.push(newTask);
-
-  const jsonData = JSON.stringify(existingTasks, null, 2);
-  fs.writeFile("tasksData.json", jsonData, (err) => {
-    if (err) console.error("Error writing JSON file:", err);
-  });
+  FO.writeFile("./tasksData.json", tasks);
+  console.log(`Task added successfully (ID: ${newTask.id})`);
 }
 
 function ManageTasks(mainCommand, args) {
