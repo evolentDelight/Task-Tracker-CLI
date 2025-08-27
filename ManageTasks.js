@@ -114,6 +114,31 @@ function deleteTask(id) {
   return console.log(`Task deleted successfully (ID: ${id})`);
 }
 
+function markTask(id, status) {
+  if (!FO.fileExistsSync("./tasksData.json")) {
+    return console.error(
+      `Error: Task ID: ${id} does not exist; There are no tasks in the list`
+    );
+  }
+
+  let tasks = FO.readFileSync("./tasksData.json");
+
+  if (!tasks)
+    return console.error(
+      `Task ID: ${id} does not exist; There are no tasks in the list`
+    );
+
+  const index = tasks.findIndex((obj) => Number(obj.id) === Number(id));
+
+  if (index === -1)
+    return console.error(`Error: Task ID: ${id} does not exist in the list`);
+
+  tasks[index].status = status;
+
+  FO.writeFile("./tasksData.json", tasks);
+  return console.log(`Task status updated successfully (ID: ${id})`);
+}
+
 function ManageTasks(mainCommand, args) {
   switch (mainCommand) {
     case "add":
@@ -126,6 +151,11 @@ function ManageTasks(mainCommand, args) {
       deleteTask(args[1]); //(id)
       break;
     case "mark-in-progress":
+      markTask(args[1], "in-progress"); //(id, status)
+      break;
+    case "mark-done":
+      markTask(args[1], "done"); //(id, status)
+      break;
   }
 }
 
