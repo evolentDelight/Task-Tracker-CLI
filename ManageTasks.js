@@ -83,6 +83,7 @@ function updateTask(id, newDescription) {
     return console.error(`Error: Task ID: ${id} does not exist in the list`);
 
   tasks[index].description = newDescription;
+  tasks[index].updatedAt = new Date().toString();
 
   FO.writeFile("./tasksData.json", tasks);
   return console.log(`Task updated successfully (ID: ${id})`);
@@ -123,6 +124,8 @@ function ManageTasks(mainCommand, args) {
       break;
     case "delete":
       deleteTask(args[1]); //(id)
+      break;
+    case "mark-in-progress":
   }
 }
 
