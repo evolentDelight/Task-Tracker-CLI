@@ -88,6 +88,31 @@ function updateTask(id, newDescription) {
   return console.log(`Task updated successfully (ID: ${id})`);
 }
 
+function deleteTask(id) {
+  if (!FO.fileExistsSync("./tasksData.json")) {
+    return console.error(
+      `Error: Task ID: ${id} does not exist; There are no tasks in the list`
+    );
+  }
+
+  let tasks = FO.readFileSync("./tasksData.json");
+
+  if (!tasks)
+    return console.error(
+      `Task ID: ${id} does not exist; There are no tasks in the list`
+    );
+
+  const index = tasks.findIndex((obj) => Number(obj.id) === Number(id));
+
+  if (index === -1)
+    return console.error(`Error: Task ID: ${id} does not exist in the list`);
+
+  tasks.splice(index, 1);
+
+  FO.writeFile("./tasksData.json", tasks);
+  return console.log(`Task deleted successfully (ID: ${id})`);
+}
+
 function ManageTasks(mainCommand, args) {
   switch (mainCommand) {
     case "add":
@@ -96,6 +121,8 @@ function ManageTasks(mainCommand, args) {
     case "update":
       updateTask(args[1], args[2]); //(id, new name/description)
       break;
+    case "delete":
+      deleteTask(args[1]); //(id)
   }
 }
 
