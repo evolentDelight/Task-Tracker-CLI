@@ -34,7 +34,7 @@ function getNextId() {
 function addNewTask(description) {
   //Check if user-inputted description is valid
   if (!description)
-    return console.error("||Error|| Missing required name/description");
+    return console.error("Error: Missing required name/description");
 
   const newId = getNextId();
 
@@ -57,13 +57,45 @@ function addNewTask(description) {
   else tasks.push(newTask);
 
   FO.writeFile("./tasksData.json", tasks);
-  console.log(`Task added successfully (ID: ${newTask.id})`);
+  return console.log(`Task added successfully (ID: ${newTask.id})`);
+}
+
+function updateTask(id, newDescription) {
+  if (!newDescription)
+    return console.error("Error: Missing required name/description");
+
+  if (!FO.fileExistsSync("./tasksData.json")) {
+    return console.error(
+      `Error: Task ID: ${id} does not exist; There are no tasks in the list`
+    );
+  }
+
+  let tasks = FO.readFileSync("./tasksData.json");
+
+  if (!tasks)
+    return console.error(
+      `Task ID: ${id} does not exist; There are no tasks in the list`
+    );
+
+  const index = tasks.findIndex((obj) => Number(obj.id) === Number(id));
+
+  if (index === -1)
+    return console.error(`Error: Task ID: ${id} does not exist in the list`);
+
+  tasks[index].description = newDescription;
+
+  FO.writeFile("./tasksData.json", tasks);
+  return console.log(`Task updated successfully (ID: ${id})`);
 }
 
 function ManageTasks(mainCommand, args) {
   switch (mainCommand) {
     case "add":
-      addNewTask(args[1]);
+      addNewTask(args[1]); //(name/description)
+      break;
+    case "update":
+      updateTask(args[1], args[2]); //(id, new name/description)
+      break;
   }
 }
 
