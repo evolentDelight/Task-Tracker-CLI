@@ -134,6 +134,7 @@ function markTask(id, status) {
     return console.error(`Error: Task ID: ${id} does not exist in the list`);
 
   tasks[index].status = status;
+  tasks[index].updatedAt = new Date().toString();
 
   FO.writeFile("./tasksData.json", tasks);
   return console.log(`Task status updated successfully (ID: ${id})`);
