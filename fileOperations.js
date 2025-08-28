@@ -11,6 +11,7 @@ function fileExistsSync(pathname) {
 function readFileSync(pathname) {
   //Synchronously read file and return file data
   const jsonData = fs.readFileSync(pathname, "utf8");
+  if (!jsonData) return 0;
   const data = JSON.parse(jsonData);
   return data;
 }
