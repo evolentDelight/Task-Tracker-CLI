@@ -20,7 +20,8 @@ function getNextId() {
     });
     return 0;
   }
-  const IDs = FO.readFileSync("./programData.json");
+  let IDs = FO.readFileSync("./programData.json");
+
   // if data is empty, then create new
   if (!IDs) IDs = { id: 99999 }; //if programData is somehow deleted or empty, it will affect the existing task ids in tasksData.json, thus either using unique id or absurd numbered id will alleviate the issue
 
