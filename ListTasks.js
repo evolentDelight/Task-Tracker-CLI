@@ -28,7 +28,7 @@ function ListTasks(status) {
 
   if (!tasks)
     return console.error(
-      `Task ID: ${id} does not exist; There are no tasks in the list`
+      `Error: Task ID: ${id} does not exist; There are no tasks in the list`
     );
 
   let tasksToOutput;

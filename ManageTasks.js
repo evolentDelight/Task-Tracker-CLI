@@ -75,7 +75,7 @@ function updateTask(id, newDescription) {
 
   if (!tasks)
     return console.error(
-      `Task ID: ${id} does not exist; There are no tasks in the list`
+      `Error: Task ID: ${id} does not exist; There are no tasks in the list`
     );
 
   const index = tasks.findIndex((obj) => Number(obj.id) === Number(id));
@@ -101,7 +101,7 @@ function deleteTask(id) {
 
   if (!tasks)
     return console.error(
-      `Task ID: ${id} does not exist; There are no tasks in the list`
+      `error: Task ID: ${id} does not exist; There are no tasks in the list`
     );
 
   const index = tasks.findIndex((obj) => Number(obj.id) === Number(id));
@@ -126,7 +126,7 @@ function markTask(id, status) {
 
   if (!tasks)
     return console.error(
-      `Task ID: ${id} does not exist; There are no tasks in the list`
+      `Error: Task ID: ${id} does not exist; There are no tasks in the list`
     );
 
   const index = tasks.findIndex((obj) => Number(obj.id) === Number(id));
