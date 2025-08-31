@@ -20,7 +20,7 @@ function ListTasks(status) {
   //status: done, todo, in-progress
   if (!FO.fileExistsSync("./tasksData.json")) {
     return console.error(
-      `Error: Task ID: ${id} does not exist; There are no tasks in the list`
+      `Error: Cannot list tasks; There are no tasks in the list`
     );
   }
 
@@ -28,7 +28,7 @@ function ListTasks(status) {
 
   if (!tasks)
     return console.error(
-      `Error: Task ID: ${id} does not exist; There are no tasks in the list`
+      `Error: Cannot list tasks; There are no tasks in the list`
     );
 
   let tasksToOutput;
