@@ -9,7 +9,7 @@ A Command Line Interface Project to track and manage tasks/todo
 For this to work, you must have NodeJS
 Download that first. Any version will do
 
-### Download the files and Install the Application
+### Download the files and Link the Application
 
 1. Download the files
 2. And place them anywhere on your computer
@@ -29,7 +29,7 @@ Using the keyword
 `task-cli`
 You will be able to run the following commands
 
-### Uninstall the Application
+### Unlink the Application
 
 1. Go into your folder with the files
 2. Open up a console, terminal, or Command Line Interface
