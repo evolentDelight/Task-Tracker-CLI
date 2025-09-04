@@ -72,7 +72,7 @@ task-cli list in-progress
 # Output: Task status updated successfully (ID: <ID>)
 ```
 
-## Delete/Unlink the Application
+## For Unlinking and Deleting the Application
 
 1. Go into your folder/directory with the main application files(The files downloaded from this repository)
 2. Open up a console, terminal, or Command Line Interface in that folder/directory with the main application files
