@@ -29,6 +29,40 @@ Using the keyword
 `task-cli`
 You will be able to run the following commands
 
+```
+# Add a new task
+task-cli add <Description>
+task-cli add "Practice coding"
+# Output: Task added successfully (ID: <ID>)
+
+# Update task
+task-cli update <ID> <New Description>
+task-cli update 1 "Complete Leetcode and Codewars"
+# Output: Task updated successfully (ID: <ID>)
+
+# Delete task
+task-cli delete <ID>
+task-cli delete 1
+# Output: Task deleted successfully (ID: ID)
+
+# Mark a task as in-progress or done
+task-cli <mark status command> <ID>
+task-cli mark-in-progress 1
+task-cli mark-done 1
+# Output: Task status updated successfully (ID: <ID>)
+
+# List all tasks
+task-cli list
+# Output: Task status updated successfully (ID: <ID>)
+
+# List tasks by status
+task-cli list <status>
+task-cli list done
+task-cli list todo
+task-cli list in-progress
+# Output: Task status updated successfully (ID: <ID>)
+```
+
 ## Unlink the Application
 
 1. Go into your folder with the files
