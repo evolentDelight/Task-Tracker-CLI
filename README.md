@@ -28,7 +28,7 @@ Open up the console, terminal, or Command Line Interface in any folder/directory
 > When running the program, the program will create two files in the folder/directory that the terminal is at:
 >
 > - programData.json
-> - taskData.json
+> - tasksData.json
 >
 > To continue using the program with the created tasks or to delete these files, you must remember the folder/directory where you ran the program. And run the terminal program there.
 >
