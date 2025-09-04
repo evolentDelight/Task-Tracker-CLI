@@ -7,7 +7,7 @@ A Command Line Interface Project to track and manage tasks/todo
 ## Download NodeJS
 
 For this to work, you must have NodeJS
-Download that first. Any version will do
+First download NodeJS from their website
 
 ## Download the files and Link the Application
 
@@ -16,14 +16,21 @@ Download that first. Any version will do
    - If needed, unzip them first before placing them
 3. Then, go into the folder containing the files
 4. Open up a console, terminal, or Command Line Interface
-   - Any CLI will work
-     - Git Bash
-     - (Not Recommended) Powershell (after allowing script to work)
-     - MAC(untested)
-     - Linux Terminal
-5. Type in `npm link` and Run it/"Press Enter"
+   - Git Bash
+     - This can be downloaded on Git website
+5. Type in `npm link` and Press Enter key
 
 ## Run the Application
+
+Open up the console, terminal, or Command Line Interface in any folder/directory.
+
+> [!IMPORTANT]
+> When running the program, the program will create two files in the folder/directory that the terminal is at:
+>
+> - programData.json
+> - taskData.json
+>
+>   To delete these files, you must remember the folder/directory where you ran the program.
 
 Using the keyword
 `task-cli`
@@ -63,9 +70,11 @@ task-cli list in-progress
 # Output: Task status updated successfully (ID: <ID>)
 ```
 
-## Unlink the Application
+## Delete/Unlink the Application
 
-1. Go into your folder with the files
-2. Open up a console, terminal, or Command Line Interface
-3. Type in `npm unlink -g` and Run it/"Press Enter"
+1. Go into your folder/directory with the main application files(The files downloaded from this repository)
+2. Open up a console, terminal, or Command Line Interface in that folder/directory with the main application files
+3. Type in `npm unlink -g` and Press Enter key
 4. The uninstallation is complete
+5. The Main application files can now be deleted
+   - If you have ran the program in a different folder/directory, you must go to that folder/directory and delete `programData.json` and `tasksData.json` files
