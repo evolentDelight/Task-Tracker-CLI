@@ -11,7 +11,7 @@ First, download NodeJS from their website.
 
 ## Download the Main Application Files and Link the Application
 
-1. Download the main application files
+1. Download the main application files from this repository
 2. And place them anywhere on your computer
    - If needed, unzip them first before placing them
 3. Then, go into the folder containing the files
