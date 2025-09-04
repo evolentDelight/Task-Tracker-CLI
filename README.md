@@ -9,7 +9,7 @@ A Command Line Interface Project to track and manage tasks/todo
 For this to work, you must have NodeJS.  
 First, download NodeJS from their website.
 
-## Download the main application files and Link the Application
+## Download the Main Application Files and Link the Application
 
 1. Download the main application files
 2. And place them anywhere on your computer
