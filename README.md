@@ -30,7 +30,7 @@ Open up the console, terminal, or Command Line Interface in any folder/directory
 > - programData.json
 > - taskData.json
 >
->   To delete these files, you must remember the folder/directory where you ran the program.
+> To delete these files, you must remember the folder/directory where you ran the program.
 
 Using the keyword
 `task-cli`
