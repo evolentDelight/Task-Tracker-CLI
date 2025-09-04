@@ -9,9 +9,9 @@ A Command Line Interface Project to track and manage tasks/todo
 For this to work, you must have NodeJS.  
 First, download NodeJS from their website.
 
-## Download the files and Link the Application
+## Download the main application files and Link the Application
 
-1. Download the files
+1. Download the main application files
 2. And place them anywhere on your computer
    - If needed, unzip them first before placing them
 3. Then, go into the folder containing the files
@@ -31,6 +31,7 @@ Open up the console, terminal, or Command Line Interface in any folder/directory
 > - taskData.json
 >
 > To continue using the program with the created tasks or to delete these files, you must remember the folder/directory where you ran the program. And run the terminal program there.
+> To keep it simple, you should run the application in the same folder/directory where you placed the main application files.
 
 Using the keyword
 `task-cli`
