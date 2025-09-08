@@ -15,7 +15,7 @@ First, download NodeJS from their website.
 2. And place them anywhere on your computer
    - If needed, unzip them first before placing them
 3. Then, go into the folder/directory containing the files
-4. Open up a console, terminal, or Command Line Interface in that very fodler/directory
+4. Open up a console, terminal, or Command Line Interface in that very folder/directory
    - Git Bash
      - This can be downloaded on Git website
 5. Type in `npm link` and Press Enter key
