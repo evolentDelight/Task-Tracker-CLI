@@ -1,6 +1,6 @@
 # Task-Tracker-CLI
 
-[Link to this repository](https://github.com/evolentDelight/Task-Tracker-CLI)
+[Link to the Project](https://roadmap.sh/projects/task-tracker)
 
 A Command Line Interface Project to track and manage tasks/todo
 
