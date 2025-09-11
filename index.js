@@ -33,7 +33,7 @@ outerSwitch: switch (mainCommand) {
   case "delete":
   case "mark-in-progress":
   case "mark-done":
-    ManageTasks(args[0], args);
+    ManageTasks(mainCommand, args);
     break;
   case "list":
     switch (status) {
