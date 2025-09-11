@@ -37,15 +37,19 @@ Open up the console, terminal, or Command Line Interface in any folder/directory
 Using the keyword
 `task-cli`
 You will be able to run the following commands
+You can run any of the following commands using any combination of uppercase and lowercase letters.
+
+- But, it must be add, update, delete, etc.
+- E.g. Add, UpDate, Delete would work
 
 ```
 # Add a new task
-task-cli add <Description>
+task-cli add <Description>(Must be in quote for spacing)
 task-cli add "Practice coding"
 # Output: Task added successfully (ID: <ID>)
 
 # Update task
-task-cli update <ID> <New Description>
+task-cli update <ID> <New Description>(Must be in quote for spacing)
 task-cli update 1 "Complete Leetcode and Codewars"
 # Output: Task updated successfully (ID: <ID>)
 
