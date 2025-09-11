@@ -21,7 +21,13 @@ import ListTasks from "./ListTasks.js";
 
 const args = process.argv.slice(2);
 
-outerSwitch: switch (args[0]) {
+let mainCommand, status;
+
+//Case-insensitive
+if (args[0]) mainCommand = args[0].toLowerCase();
+if (args[1]) status = args[1].toLowerCase();
+
+outerSwitch: switch (mainCommand) {
   case "add":
   case "update":
   case "delete":
@@ -30,14 +36,14 @@ outerSwitch: switch (args[0]) {
     ManageTasks(args[0], args);
     break;
   case "list":
-    switch (args[1]) {
+    switch (status) {
       case "done":
       case "todo":
       case "in-progress":
-        ListTasks(args[1]);
+        ListTasks(status);
         break outerSwitch;
       default:
-        if (args[1]) {
+        if (status) {
           //If there is an invalid argument after "list"
           // console.log(`Invalid command: ${args[1]}`); ->forwarded to default
           break;
@@ -47,9 +53,12 @@ outerSwitch: switch (args[0]) {
         }
     }
   default: //Better troubleshooting response
-    if (args[0] === "list") {
+    if (mainCommand === "list") {
       console.log(`Invalid command: ${args[1]}`);
       console.log(`Your command: ${args[0]} ${args[1]}`);
+    } else if (!mainCommand) {
+      console.log(`No command entered.`);
+      console.log(`Please enter a command after task-cli `);
     } else {
       console.log(`Invalid command: ${args[0]}`);
       console.log(`Your command: ${args[0]}`);
