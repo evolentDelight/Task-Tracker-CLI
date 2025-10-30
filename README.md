@@ -37,9 +37,9 @@ Open up the console, terminal, or Command Line Interface in any folder/directory
 > To keep it simple, you should run the application in the same folder/directory where you placed the main application files.
 
 Using the keyword
-`task-cli`
+`task-cli`  
 You will be able to run the following commands
-You can run any of the following commands using any combination of uppercase and lowercase letters.
+&nbsp; &nbsp; The commands are case-insensitive. Thus, you can use any combination of uppercase and lowercase.
 
 - But, it must be add, update, delete, etc.
 - E.g. Add, UpDate, Delete would work
@@ -68,14 +68,24 @@ task-cli mark-done 1
 
 # List all tasks
 task-cli list
-# Output: Task status updated successfully (ID: <ID>)
+# Output:
+             Task: Practice Coding
+          Task ID: 6
+      Task Status: todo
+Task Created Date: Wed Oct 29 2025 17:58:14 GMT-0700 (Pacific Daylight Time)
+Task Updated Date: Never updated
 
 # List tasks by status
 task-cli list <status>
 task-cli list done
 task-cli list todo
 task-cli list in-progress
-# Output: Task status updated successfully (ID: <ID>)
+# Output:
+             Task: Practice Coding
+          Task ID: 6
+      Task Status: in-progress
+Task Created Date: Wed Oct 29 2025 17:58:14 GMT-0700 (Pacific Daylight Time)
+Task Updated Date: Wed Oct 29 2025 17:59:35 GMT-0700 (Pacific Daylight Time)
 ```
 
 ## For Unlinking and Deleting the Application
