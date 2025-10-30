@@ -38,7 +38,7 @@ Open up the console, terminal, or Command Line Interface in any folder/directory
 
 Using the keyword
 `task-cli`  
-You will be able to run the following commands
+You will be able to run the following commands  
 &nbsp; &nbsp; The commands are case-insensitive. Thus, you can use any combination of uppercase and lowercase.
 
 - But, it must be add, update, delete, etc.
