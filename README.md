@@ -1,6 +1,6 @@
 # Task-Tracker-CLI
 
-[Link to the Project](https://roadmap.sh/projects/task-tracker)
+[Link to the Roadmap Project Description](https://roadmap.sh/projects/task-tracker)
 
 A Command Line Interface Project to track and manage tasks/todo
 
@@ -8,8 +8,8 @@ A Command Line Interface Project to track and manage tasks/todo
 
 ## Download NodeJS
 
-For this to work, you must have NodeJS.  
-First, download NodeJS from their website.
+For this to work, you must have NodeJS installed.  
+First, download NodeJS from their website and install it
 
 ## Download the Main Application Files and Link the Application
 
@@ -46,12 +46,12 @@ You will be able to run the following commands
 
 ```
 # Add a new task
-task-cli add <Description>(Must be in quote for spacing)
+task-cli add "<Description>"(Must be in quotes for spacing)
 task-cli add "Practice coding"
 # Output: Task added successfully (ID: <ID>)
 
 # Update task
-task-cli update <ID> <New Description>(Must be in quote for spacing)
+task-cli update <ID> "<New Description>"(Must be in quote for spacing)
 task-cli update 1 "Complete Leetcode and Codewars"
 # Output: Task updated successfully (ID: <ID>)
 
